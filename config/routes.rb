@@ -19,7 +19,23 @@ Rails.application.routes.draw do
   end
 
   get '/about' => 'about#show'
+
   get '/admin/categories' => 'categories#index'
+
+  get '/registration' => 'users#new'
+
+  # these routes are for showing users a login form, logging them in, and logging them out.
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/user' => 'users#new'
+  post '/user' => 'users#create'
+
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
